@@ -21,17 +21,17 @@ fi
 
 echo "✅ Node.js version check passed: $NODE_VERSION"
 
-# Check npm
-if ! command -v npm &> /dev/null; then
-    echo "❌ npm is not installed."
+# Check pnpm
+if ! command -v pnpm &> /dev/null; then
+    echo "❌ pnpm is not installed. Install with: npm install -g pnpm"
     exit 1
 fi
 
-echo "✅ npm check passed"
+echo "✅ pnpm check passed"
 
 # Install dependencies
 echo "📦 Installing dependencies..."
-npm install
+pnpm install
 
 if [ $? -ne 0 ]; then
     echo "❌ Dependencies installation failed"
@@ -42,7 +42,7 @@ echo "✅ Dependencies installed successfully"
 
 # Build project
 echo "🔨 Building project..."
-npm run build
+pnpm run build
 
 if [ $? -ne 0 ]; then
     echo "❌ Project build failed"
@@ -53,7 +53,7 @@ echo "✅ Project built successfully"
 
 # Install Playwright browsers
 echo "🌐 Installing Playwright browsers..."
-npx playwright install
+pnpm exec playwright install
 
 if [ $? -ne 0 ]; then
     echo "❌ Playwright browsers installation failed"
@@ -64,7 +64,7 @@ echo "✅ Playwright browsers installed successfully"
 
 # Create global link (optional)
 echo "🔗 Creating global link..."
-npm link
+pnpm link --global
 
 if [ $? -eq 0 ]; then
     echo "✅ Global link created successfully"

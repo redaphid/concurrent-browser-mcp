@@ -11,9 +11,9 @@
     "build": "tsc",
     "dev": "tsc --watch",
     "start": "node dist/index.js",
-    "test": "vitest",
+    "test": "vitest run --passWithNoTests",
     "test:proxy": "node test-proxy.js",
-    "prepare": "npm run build"
+    "prepare": "pnpm run build"
   },
   "keywords": [
     "mcp",
@@ -42,19 +42,24 @@
     "access": "public"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^0.6.0",
-    "playwright": "^1.48.0",
-    "uuid": "^10.0.0",
-    "commander": "^12.0.0",
-    "chalk": "^5.3.0"
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "playwright": "^1.59.0",
+    "uuid": "^13.0.0",
+    "commander": "^14.0.0",
+    "chalk": "^5.6.0"
   },
   "devDependencies": {
-    "@types/node": "^22.0.0",
-    "@types/uuid": "^10.0.0",
-    "typescript": "^5.6.0",
-    "vitest": "^2.0.0"
+    "@types/node": "^25.6.0",
+    "typescript": "^6.0.0",
+    "vitest": "^4.1.0"
+  },
+  "packageManager": "pnpm@10.28.0",
+  "pnpm": {
+    "overrides": {
+      "vite": "8.0.8"
+    }
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   }
 } 

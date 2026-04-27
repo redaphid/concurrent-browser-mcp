@@ -33,23 +33,26 @@ npx concurrent-browser-mcp
 
 ```bash
 # Clone repository
-git clone https://github.com/sailaoda/concurrent-browser-mcp.git
+git clone https://github.com/redaphid/concurrent-browser-mcp.git
 cd concurrent-browser-mcp
 
-# Install dependencies
-npm install
+# Install dependencies (pnpm required; see packageManager field)
+pnpm install
+
+# Install Playwright browser binaries
+pnpm exec playwright install
 
 # Build project
-npm run build
+pnpm run build
 
 # Optional: Global link (for local development)
-npm link
+pnpm link --global
 ```
 
 ### Option 3: Quick Install Script
 
 ```bash
-git clone https://github.com/sailaoda/concurrent-browser-mcp.git
+git clone https://github.com/redaphid/concurrent-browser-mcp.git
 cd concurrent-browser-mcp
 ./install.sh
 ```
